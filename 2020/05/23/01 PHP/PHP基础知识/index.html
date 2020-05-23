@@ -333,7 +333,6 @@
 <li><p>选择合适的内存有很多算法：比如首次适配、最佳适配、最差适配等。</p>
 </li>
 </ol>
-<p>![PHP基础知识](/Users/dongysh/Documents/www/part-time/blog/hexo/source/_posts/01 PHP/PHP基础知识/图片1.png)</p>
 <h3 id="内存池"><a href="#内存池" class="headerlink" title="内存池"></a>内存池</h3><p>由于频繁malloc分配内存块会导致效率低下（如根据算法找出合适的内存块、调用free等释放内存并且可能会合并空闲块）而且会产生很多内存碎片，也很容易造成内存泄漏。还有可能因申请不到合适的内存导致系统运行不稳定。</p>
 <p>因此，内存池就是用来解决上述问题的，由系统提前分配好各种大小的内存，当程序需要申请内存的时候，先去内存池中查找，这样就不用频繁申请和释放内存了。</p>
 <h2 id="PHP垃圾回收机制"><a href="#PHP垃圾回收机制" class="headerlink" title="PHP垃圾回收机制"></a>PHP垃圾回收机制</h2><ol>
@@ -428,6 +427,8 @@
 </li>
 </ol>
 <h3 id="PHP执行机制"><a href="#PHP执行机制" class="headerlink" title="PHP执行机制"></a>PHP执行机制</h3><p>PHP执行过程会经过如下4个步骤： </p>
+<img src="/2020/05/23/01%20PHP/PHP%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/05/23/01%20PHP/PHP%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/%E5%9B%BE%E7%89%871.png" class title="PHP代码执行流程">
+
 <ol>
 <li><p>Scanning(Lexing) 对PHP源码进行词法分析，将源代码切割为多个字符串单元，分割后的字符串称为Token</p>
 </li>
