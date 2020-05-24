@@ -257,20 +257,22 @@
 		<div id="index">
 	
 		<div class="index-li">
-			<a href="/2020/05/24/1.PHP/1.%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/7.PHP%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6/">
+			<a href="/2020/05/24/1.PHP/1.%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/3.PHP%E8%BF%90%E8%A1%8C%E6%A8%A1%E5%BC%8F/">
 				<h2 class="index-title">
-					7.PHP垃圾回收机制
+					3.PHP运行模式
 				</h2>
 				<div class="index-brief">
-					垃圾回收原理PHP5和PHP7的垃圾回收机制都是利用引用计数 
-PHP5和PHP7垃圾回收的不同点
-PHP5标量数据类型会计数，PHP7标量数据类型不再计数，不需要单独分配内存
+					4种运行模式
+cgi（Common Gateway Interface，通用网关接口）模式
+
+fast-cgi模式，即常驻型的cgi
+
+cli（Command Line Interface）命令行运行模式
+
+web模块模式，如apache的mod_php5.so模块
 
 
-PHP7的zval 需要的内存不再是单独从堆上分配，不再自己存储引用计数。
-
-
-PHP7的复杂数据类型（比如数组和对象
+fast-cgi模式工作原理
 					...
 				</div>
 			</a>
@@ -283,202 +285,18 @@ PHP7的复杂数据类型（比如数组和对象
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2020/05/24/1.PHP/1.%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/1.PHP7%E4%BB%8B%E7%BB%8D/4.%E6%95%B0%E7%BB%84%E5%BA%95%E5%B1%82%E5%AE%9E%E7%8E%B0/">
+			<a href="/2020/05/24/1.PHP/1.%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/2.PHP%E7%9A%84%E7%9B%AE%E5%BD%95%E6%9E%84%E6%88%90/">
 				<h2 class="index-title">
-					4.数组底层实现
+					2.PHP的目录构成
 				</h2>
 				<div class="index-brief">
-					实现原理
-PHP 数组是基于哈希表实现的，而与一般哈希表不同的是 PHP 的数组还实现了元素的有序性，就是插入的元素从内存上来看是连续的而不是乱序的，为了实现这个有序性 PHP 采用了「映射表」技术。此外，PHP采用链地址法解决哈希冲突。
+					目录构成
+目录分析
+sapi目录是PHP的应用接口层。
 
-映射表和数组元素在同一片连续的内存中，映射表是一个长度与存
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2020-05-24</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2020/05/24/1.PHP/1.%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/1.PHP7%E4%BB%8B%E7%BB%8D/3.zval%E5%8F%98%E5%8C%96/">
-				<h2 class="index-title">
-					3.zval变化
-				</h2>
-				<div class="index-brief">
-					PHP7 zval变化答： zval 不再单独从堆上分配内存并且不自己存储引用计数。需要使用 zval 指针的复杂类型（比如字符串、数组和对象）会自己存储引用计数。这样就可以有更少的内存分配操作、更少的间接指针使用以及更少的内存分配。
-PHP5与PHP7 zval对比PHP5 中 zval 实现方式
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2020-05-24</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2020/05/24/1.PHP/1.%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/1.PHP7%E4%BB%8B%E7%BB%8D/2.%E4%BC%98%E5%8C%96%E5%8E%9F%E7%90%86/">
-				<h2 class="index-title">
-					2.优化原理
-				</h2>
-				<div class="index-brief">
-					优化原理简版
-变量存储字节减小，减少内存占用，提升变量操作速度
-改善数组结构，数组元素和hash映射表被分配在同一块内存里，降低了内存占用、提升了 cpu 缓存命中率
-改进了函数的调用机制，通过优化参数传递的环节，减少了一些指令，提高执行效率
+main为php的主要代码，主要是输入/输出、Web通信、PHP框架的初始化操作等，比如fastcgi协议的解析、扩展的加载、PHP配置的解析等工作都是在这里完成的。
 
-优化原理详版
-zval使用栈内存，php7直接使用栈内
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2020-05-24</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2020/05/24/1.PHP/1.%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/1.PHP7%E4%BB%8B%E7%BB%8D/1.%E6%96%B0%E7%89%B9%E6%80%A7/">
-				<h2 class="index-title">
-					1.新特性
-				</h2>
-				<div class="index-brief">
-					
-新增throwable接口，以前的许多致命错误，现在改成抛出异常。
-新增了空接合操作符
-新增了结合比较运算符
-新增了函数的返回类型声明
-新增了标量类型声明
-新增了匿名类
-新增了常量数组声明
-namespace批量导入
-新增了抽象语法树
-移除了一些老的不在支持的SAPI（服务器端应用编程端口）和扩展
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2020-05-24</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2020/05/24/1.PHP/1.%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/9.PHP-FPM/">
-				<h2 class="index-title">
-					9.PHP-FPM
-				</h2>
-				<div class="index-brief">
-					定义PHP-FPM就是PHP中的FastCGI进程管理器。进程包括master进程和worker进程。master进程只有一个，负责管理子进程。worker进程一般会有多个，每个进程中会嵌入一个PHP解析器，处理PHP代码。
-如果在Linux上搭建Nginx和PHP环境，则需要安装PHP-FPM模块
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2020-05-24</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2020/05/24/1.PHP/1.%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/6.PHP%E6%89%A7%E8%A1%8C%E6%9C%BA%E5%88%B6/">
-				<h2 class="index-title">
-					6.PHP执行机制
-				</h2>
-				<div class="index-brief">
-					PHP执行过程会经过如下4个步骤： 
-
-
-Scanning(Lexing) 对PHP源码进行词法分析，将源代码切割为多个字符串单元，分割后的字符串称为Token
-
-Parsing 将Token进行语法分析，转换成抽象语法树（AST）
-
-Compilation AST经过编译器编译为机器指令（PHP定
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2020-05-24</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2020/05/24/1.PHP/1.%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/8.PHP%E9%94%99%E8%AF%AF%E4%B8%8E%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/">
-				<h2 class="index-title">
-					8.PHP错误与异常处理
-				</h2>
-				<div class="index-brief">
-					PHP中什么是异常　　程序在运行中出现不符合预期的情况，允许发生（你也不想让他出现不正常的情况）但他是一种不正常的情况，按照我们的正常逻辑本不该出的错误，但仍然会出现的错误，属于逻辑和业务流程的错误，而不是编译或者语法上的错误。
-PHP中什么是错误　　属于php脚本自身的问题，大部分情况是由错误的语
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2020-05-24</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2020/05/24/1.PHP/1.%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/5.PHP%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/">
-				<h2 class="index-title">
-					5.PHP内存管理
-				</h2>
-				<div class="index-brief">
-					内存管理
-任何内存分配器都需要额外的数据结构来记录内存的分配情况；
-
-内存池是代替直接调用malloc/free、new/delete进行内存管理的常用方法；内存池中空闲内存块组织为链表结构，申请内存只需要查找空闲链表即可，释放内存需要将内存块重新插入空闲链表；
-
-PHP采用预分配内存策略，提前向操
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2020-05-24</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2020/05/24/1.PHP/1.%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/4.PHP%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/">
-				<h2 class="index-title">
-					4.PHP生命周期
-				</h2>
-				<div class="index-brief">
-					PHP的整个生命周期被划分为以下几个阶段：
-
-模块初始化阶段（module startup）
-
-请求初始化阶段（request startup）
-
-脚本执行阶段（execute sccript）
-
-请求关闭阶段（request shutdown）
-
-模块关闭阶段（module shutdown）
-
-
+zend目录是PHP解析器的主要实现，即ZendVM，它是PHP语言的核
 					...
 				</div>
 			</a>
@@ -493,7 +311,7 @@ PHP采用预分配内存策略，提前向操
 	
 	<div id="index-paginator">
 		
-			<span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">&gt;</a>
+			<a class="extend prev" rel="prev" href="/tags/PHP/">&lt;</a><a class="page-number" href="/tags/PHP/">1</a><span class="page-number current">2</span>
 		
 	</div>
 </div>
