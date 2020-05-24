@@ -1688,9 +1688,16 @@
 							</ul>
 			
 							<ul>
-								<li class="file">
-									<a href="/2020/05/24/11.%E5%BE%AE%E6%9C%8D%E5%8A%A1/1.%E5%85%A8%E6%B5%81%E7%A8%8B%E8%A7%A3%E6%9E%90/6.%E7%BB%9F%E4%B8%80%E9%85%8D%E7%BD%AE%E4%B8%AD%E5%BF%83/">
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
 										6.统一配置中心
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2020/05/24/11.%E5%BE%AE%E6%9C%8D%E5%8A%A1/1.%E5%85%A8%E6%B5%81%E7%A8%8B%E8%A7%A3%E6%9E%90/6.%E7%BB%9F%E4%B8%80%E9%85%8D%E7%BD%AE%E4%B8%AD%E5%BF%83/1.%E6%96%B9%E6%A1%88%E5%AF%B9%E6%AF%94/">
+										1.方案对比
 									</a>
 								</li>
 								<div class="article-toc" style="display: none;"></div>
@@ -1698,8 +1705,30 @@
 			
 							<ul>
 								<li class="file">
+									<a href="/2020/05/24/11.%E5%BE%AE%E6%9C%8D%E5%8A%A1/1.%E5%85%A8%E6%B5%81%E7%A8%8B%E8%A7%A3%E6%9E%90/6.%E7%BB%9F%E4%B8%80%E9%85%8D%E7%BD%AE%E4%B8%AD%E5%BF%83/2.Etcd/">
+										2.Etcd
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="file">
 									<a href="/2020/05/24/11.%E5%BE%AE%E6%9C%8D%E5%8A%A1/1.%E5%85%A8%E6%B5%81%E7%A8%8B%E8%A7%A3%E6%9E%90/7.%E8%B0%83%E7%94%A8%E9%93%BE%E8%B7%AF%E5%88%86%E6%9E%90/">
 										7.调用链路分析
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2020/05/24/11.%E5%BE%AE%E6%9C%8D%E5%8A%A1/1.%E5%85%A8%E6%B5%81%E7%A8%8B%E8%A7%A3%E6%9E%90/8.%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/">
+										8.持续集成
 									</a>
 								</li>
 								<div class="article-toc" style="display: none;"></div>
@@ -1798,13 +1827,202 @@
 		<div id="index">
 	
 		<div class="index-li">
-			<a href="/2020/05/24/11.%E5%BE%AE%E6%9C%8D%E5%8A%A1/1.%E5%85%A8%E6%B5%81%E7%A8%8B%E8%A7%A3%E6%9E%90/1.%E7%BC%98%E8%B5%B7/">
+			<a href="/2020/05/24/11.%E5%BE%AE%E6%9C%8D%E5%8A%A1/1.%E5%85%A8%E6%B5%81%E7%A8%8B%E8%A7%A3%E6%9E%90/8.%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/">
 				<h2 class="index-title">
-					1.缘起
+					8.持续集成
 				</h2>
 				<div class="index-brief">
-					背景在微服务未出现之前，我们大多是单体应用，基本上一个工程包含所有，无所不能，所以很臃肿，所有模块都是在一个工程中，但是按照业务做了代码上的拆分。
-另外就是 RPC 框架并未横空出世，如果有服务上的拆分，比如不同部门之间调用对方提供的服务，那么八九不离十肯定定义的是HTTP 接口，因为通用。但是某些
+					docker+jenkins+git+registry
+
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2020-05-24</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2020/05/24/11.%E5%BE%AE%E6%9C%8D%E5%8A%A1/1.%E5%85%A8%E6%B5%81%E7%A8%8B%E8%A7%A3%E6%9E%90/4.%E6%9C%8D%E5%8A%A1%E7%BD%91%E5%85%B3/1.%E6%96%B9%E6%A1%88%E5%AF%B9%E6%AF%94/">
+				<h2 class="index-title">
+					1.方案对比
+				</h2>
+				<div class="index-brief">
+					微服务的拆分导致服务分散，如果一个大的业务要对外提供输出，每个服务单独对外提供调用对接入方不友好并且调用也会很复杂。所以出现了网关，网关主要实现请求的路由转发，负载均衡，统一校验，请求过滤等功能。
+目前社区主流的网关有四个：Kong，Zuul，Traefik，Ambassador。 
+
+
+
+特性
+K
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2020-05-24</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2020/05/24/11.%E5%BE%AE%E6%9C%8D%E5%8A%A1/1.%E5%85%A8%E6%B5%81%E7%A8%8B%E8%A7%A3%E6%9E%90/3.%E6%9C%8D%E5%8A%A1%E6%B3%A8%E5%86%8C%E4%B8%8E%E5%8F%91%E7%8E%B0/1.%E6%96%B9%E6%A1%88%E5%AF%B9%E6%AF%94/">
+				<h2 class="index-title">
+					1.方案对比
+				</h2>
+				<div class="index-brief">
+					下面列出可以被用作注册中心的组件他们的特性对比：
+
+
+
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2020-05-24</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2020/05/24/11.%E5%BE%AE%E6%9C%8D%E5%8A%A1/1.%E5%85%A8%E6%B5%81%E7%A8%8B%E8%A7%A3%E6%9E%90/2.%E6%9C%8D%E5%8A%A1%E9%80%9A%E4%BF%A1/2.%E9%80%9A%E8%AE%AF%E8%A7%84%E8%8C%83/">
+				<h2 class="index-title">
+					2.通讯规范
+				</h2>
+				<div class="index-brief">
+					JSON-RPC远程调用协议JSON-RPC简介JSON-RPC是一种基于JSON的跨语言远程调用协议。有文本传输数据小，便于调试扩展的特点。
+请求JSON-RPC非常简单，在请求时向服务器传输数据格式如下(基于JSON2.0)
+123456&#123;     "jsonrpc" : 2.0,  
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2020-05-24</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2020/05/24/11.%E5%BE%AE%E6%9C%8D%E5%8A%A1/1.%E5%85%A8%E6%B5%81%E7%A8%8B%E8%A7%A3%E6%9E%90/2.%E6%9C%8D%E5%8A%A1%E9%80%9A%E4%BF%A1/1.%E9%80%9A%E8%AE%AF%E5%8D%8F%E8%AE%AE/">
+				<h2 class="index-title">
+					1.通讯协议
+				</h2>
+				<div class="index-brief">
+					常见通信协议及区别TCP/IPTCP/IP协议是一个协议簇。里面包括很多协议的。UDP只是其中的一个。之所以命名为TCP/IP协议，因为TCP,IP协议是两个很重要的协议，就用他两命名了。
+TCP和UDPtcp和udp都是传输协议，主要区别是tcp协议连接需要3次握手，断开需要四次握手，是通过流来传
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2020-05-24</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2020/05/24/11.%E5%BE%AE%E6%9C%8D%E5%8A%A1/2.%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/1.%E6%9E%B6%E6%9E%84/">
+				<h2 class="index-title">
+					1.架构
+				</h2>
+				<div class="index-brief">
+					
+
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2020-05-24</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2020/05/24/11.%E5%BE%AE%E6%9C%8D%E5%8A%A1/1.%E5%85%A8%E6%B5%81%E7%A8%8B%E8%A7%A3%E6%9E%90/4.%E6%9C%8D%E5%8A%A1%E7%BD%91%E5%85%B3/2.Kong/">
+				<h2 class="index-title">
+					2.Kong
+				</h2>
+				<div class="index-brief">
+					介绍Kong是基于OpenResty（Nginx + Lua模块）和 Apache Cassandra/PostgreSQL 构建的，能提供易于使用的RESTful API来操作和配置API管理系统。
+Kong 可以水平扩展多个 Kong Server，通过前置的负载均衡配置把请求均匀地分发到各个S
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2020-05-24</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2020/05/24/11.%E5%BE%AE%E6%9C%8D%E5%8A%A1/1.%E5%85%A8%E6%B5%81%E7%A8%8B%E8%A7%A3%E6%9E%90/3.%E6%9C%8D%E5%8A%A1%E6%B3%A8%E5%86%8C%E4%B8%8E%E5%8F%91%E7%8E%B0/2.Consul/">
+				<h2 class="index-title">
+					2.Consul
+				</h2>
+				<div class="index-brief">
+					架构
+架构优势Docker+Consul+Nginx虽然看起来是三个组件的运用，但却证明是一个有机的整体。它们互相联系、互相作用，完全满足我们对高可用、高效服务架构方案的需求，是Docker生态圈中最理想的组合之一，具有以下优势：
+
+自动发现与注册组件consul使用 Raft 算法来保证一致性，比
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2020-05-24</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2020/05/24/11.%E5%BE%AE%E6%9C%8D%E5%8A%A1/2.%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/5.%E6%8E%A5%E5%8F%A3%E5%B9%82%E7%AD%89%E6%80%A7/">
+				<h2 class="index-title">
+					5.接口幂等性
+				</h2>
+				<div class="index-brief">
+					幂等性概念幂等就是一个操作不论执行多少次，产生的效果和返回的结果都是一样的 
+解决方案
+查询操作：查询一次和查询多次，在数据不变的情况下，查询结果是一样的。select是天然的幂等操作；
+
+删除操作：删除操作也是幂等的，删除一次和多次删除都是把数据删除。(注意可能返回结果不一样，删除的数据不存在，返
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2020-05-24</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2020/05/24/11.%E5%BE%AE%E6%9C%8D%E5%8A%A1/2.%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/4.%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E7%BC%93%E5%AD%98%E5%8F%8C%E5%86%99%E4%B8%80%E8%87%B4%E6%80%A7/">
+				<h2 class="index-title">
+					4.数据库与缓存双写一致性
+				</h2>
+				<div class="index-brief">
+					先更新数据库，再更新缓存；这套方案，大家是普遍反对的，为什么呢？有如下两点原因：
+原因一、线程安全角度同时有请求A和请求B进行更新操作，那么会出现：
+线程A更新了数据库；
+线程B更新了数据库；
+线程B更新了缓存；
+线程A更新了缓存；
+这就出现请求A更新缓存应该比请求B更新缓存早才对，但是因为网络等原
 					...
 				</div>
 			</a>
@@ -1818,6 +2036,8 @@
 	
 	
 	<div id="index-paginator">
+		
+			<span class="page-number current">1</span><a class="page-number" href="/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/page/2/">2</a><a class="extend next" rel="next" href="/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/page/2/">&gt;</a>
 		
 	</div>
 </div>

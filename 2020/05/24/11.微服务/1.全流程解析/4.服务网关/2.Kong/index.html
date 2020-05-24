@@ -1690,9 +1690,16 @@
 							</ul>
 			
 							<ul>
-								<li class="file">
-									<a href="/2020/05/24/11.%E5%BE%AE%E6%9C%8D%E5%8A%A1/1.%E5%85%A8%E6%B5%81%E7%A8%8B%E8%A7%A3%E6%9E%90/6.%E7%BB%9F%E4%B8%80%E9%85%8D%E7%BD%AE%E4%B8%AD%E5%BF%83/">
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
 										6.统一配置中心
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2020/05/24/11.%E5%BE%AE%E6%9C%8D%E5%8A%A1/1.%E5%85%A8%E6%B5%81%E7%A8%8B%E8%A7%A3%E6%9E%90/6.%E7%BB%9F%E4%B8%80%E9%85%8D%E7%BD%AE%E4%B8%AD%E5%BF%83/1.%E6%96%B9%E6%A1%88%E5%AF%B9%E6%AF%94/">
+										1.方案对比
 									</a>
 								</li>
 								<div class="article-toc" style="display: none;"></div>
@@ -1700,8 +1707,30 @@
 			
 							<ul>
 								<li class="file">
+									<a href="/2020/05/24/11.%E5%BE%AE%E6%9C%8D%E5%8A%A1/1.%E5%85%A8%E6%B5%81%E7%A8%8B%E8%A7%A3%E6%9E%90/6.%E7%BB%9F%E4%B8%80%E9%85%8D%E7%BD%AE%E4%B8%AD%E5%BF%83/2.Etcd/">
+										2.Etcd
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="file">
 									<a href="/2020/05/24/11.%E5%BE%AE%E6%9C%8D%E5%8A%A1/1.%E5%85%A8%E6%B5%81%E7%A8%8B%E8%A7%A3%E6%9E%90/7.%E8%B0%83%E7%94%A8%E9%93%BE%E8%B7%AF%E5%88%86%E6%9E%90/">
 										7.调用链路分析
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2020/05/24/11.%E5%BE%AE%E6%9C%8D%E5%8A%A1/1.%E5%85%A8%E6%B5%81%E7%A8%8B%E8%A7%A3%E6%9E%90/8.%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/">
+										8.持续集成
 									</a>
 								</li>
 								<div class="article-toc" style="display: none;"></div>
@@ -1813,7 +1842,20 @@
 </div>
 
 <div id="article-content">
-	
+	<h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><p>Kong是基于OpenResty（Nginx + Lua模块）和 Apache Cassandra/PostgreSQL 构建的，能提供易于使用的RESTful API来操作和配置API管理系统。</p>
+<p>Kong 可以水平扩展多个 Kong Server，通过前置的负载均衡配置把请求均匀地分发到各个Server，来应对大批量的网络请求。</p>
+<p>Kong 的扩展是通过插件机制进行的，本身 Kong 也已经集成了相当多的插件，包括密钥认证、CORS、文件日志、API 请求限流、请求转发、健康检查、熔断等。</p>
+<p>OpenResty：是一个基于 Nginx 与 Lua 的高性能 Web 平台，其内部集成了大量精良的 Lua 库、第三方模块以及大多数的依赖项。</p>
+<p>Apache Cassandra/PostgreSQL：数据库软件</p>
+<p>Lua：是一种轻量小巧的脚本语言，用标准C语言编写并以源代码形式开放， 其设计目的是为了嵌入应用程序中，从而为应用程序提供灵活的扩展和定制功能。</p>
+<h1 id="Nginx、Openresty和Kong三者关系"><a href="#Nginx、Openresty和Kong三者关系" class="headerlink" title="Nginx、Openresty和Kong三者关系"></a>Nginx、Openresty和Kong三者关系</h1><p>Nginx = Http Server + Reversed Proxy + Load Balancer</p>
+<p>OpenResty = Nginx + Lua-nginx-module，Openresty是寄生在 Nginx 上，暴露 Nginx 处理的各个阶段的钩子， 使用 Lua 扩展 Nginx</p>
+<p>Kong = Openresty + Customized Framework，Kong作为 OpenResty 的一个应用程序</p>
+<h1 id="架构图"><a href="#架构图" class="headerlink" title="架构图"></a>架构图</h1><p><img src="/2020/05/24/11.%E5%BE%AE%E6%9C%8D%E5%8A%A1/1.%E5%85%A8%E6%B5%81%E7%A8%8B%E8%A7%A3%E6%9E%90/4.%E6%9C%8D%E5%8A%A1%E7%BD%91%E5%85%B3/2.Kong/1.png" alt></p>
+<h1 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h1><p>可扩展性: 通过简单地添加更多的服务器，可以轻松地进行横向扩展，这意味着您的平台可以在一个较低负载的情况下处理任何请求。</p>
+<p>模块化: 可以通过添加新的插件进行扩展，这些插件可以通过RESTful Admin API轻松配置。</p>
+<p>在任何基础架构上运行: Kong 网关可以在任何地方都能运行。可以在云或内部网络环境中部署 Kong，包括单个或多个数据中心设置，以及 public，private 或 invite-only APIs。</p>
+
 </div>
 
 

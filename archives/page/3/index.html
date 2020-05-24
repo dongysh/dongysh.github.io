@@ -1688,9 +1688,16 @@
 							</ul>
 			
 							<ul>
-								<li class="file">
-									<a href="/2020/05/24/11.%E5%BE%AE%E6%9C%8D%E5%8A%A1/1.%E5%85%A8%E6%B5%81%E7%A8%8B%E8%A7%A3%E6%9E%90/6.%E7%BB%9F%E4%B8%80%E9%85%8D%E7%BD%AE%E4%B8%AD%E5%BF%83/">
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
 										6.统一配置中心
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2020/05/24/11.%E5%BE%AE%E6%9C%8D%E5%8A%A1/1.%E5%85%A8%E6%B5%81%E7%A8%8B%E8%A7%A3%E6%9E%90/6.%E7%BB%9F%E4%B8%80%E9%85%8D%E7%BD%AE%E4%B8%AD%E5%BF%83/1.%E6%96%B9%E6%A1%88%E5%AF%B9%E6%AF%94/">
+										1.方案对比
 									</a>
 								</li>
 								<div class="article-toc" style="display: none;"></div>
@@ -1698,8 +1705,30 @@
 			
 							<ul>
 								<li class="file">
+									<a href="/2020/05/24/11.%E5%BE%AE%E6%9C%8D%E5%8A%A1/1.%E5%85%A8%E6%B5%81%E7%A8%8B%E8%A7%A3%E6%9E%90/6.%E7%BB%9F%E4%B8%80%E9%85%8D%E7%BD%AE%E4%B8%AD%E5%BF%83/2.Etcd/">
+										2.Etcd
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="file">
 									<a href="/2020/05/24/11.%E5%BE%AE%E6%9C%8D%E5%8A%A1/1.%E5%85%A8%E6%B5%81%E7%A8%8B%E8%A7%A3%E6%9E%90/7.%E8%B0%83%E7%94%A8%E9%93%BE%E8%B7%AF%E5%88%86%E6%9E%90/">
 										7.调用链路分析
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2020/05/24/11.%E5%BE%AE%E6%9C%8D%E5%8A%A1/1.%E5%85%A8%E6%B5%81%E7%A8%8B%E8%A7%A3%E6%9E%90/8.%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/">
+										8.持续集成
 									</a>
 								</li>
 								<div class="article-toc" style="display: none;"></div>
@@ -1796,6 +1825,50 @@
 	<!-- 引入正文 -->
 	<div id="content">
 		<div id="index">
+	
+		<div class="index-li">
+			<a href="/2020/05/24/11.%E5%BE%AE%E6%9C%8D%E5%8A%A1/1.%E5%85%A8%E6%B5%81%E7%A8%8B%E8%A7%A3%E6%9E%90/6.%E7%BB%9F%E4%B8%80%E9%85%8D%E7%BD%AE%E4%B8%AD%E5%BF%83/2.Etcd/">
+				<h2 class="index-title">
+					2.Etcd
+				</h2>
+				<div class="index-brief">
+					定义A highly-available key value store for shared configuration and service discovery.一个键值存储仓库，用于配置共享和服务发现
+特点
+简单：基于HTTP+JSON的API让你用curl就可以轻松使用。
+安全：可选SSL
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2020-05-24</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2020/05/24/11.%E5%BE%AE%E6%9C%8D%E5%8A%A1/1.%E5%85%A8%E6%B5%81%E7%A8%8B%E8%A7%A3%E6%9E%90/5.%E6%9C%8D%E5%8A%A1%E9%99%8D%E7%BA%A7/">
+				<h2 class="index-title">
+					5.服务降级
+				</h2>
+				<div class="index-brief">
+					降级限流在微服务中属于银弹，一般不用，一旦用上那就是拯救宇宙般存在。 
+目前业界通用的降级限流工具主要有3款：Hystrix，Sentinel，Resilience4j
+整体功能对比： 
+ 
+
+从上面的参照看，Sentinel 的功能相对要多一些，但是多并不意味着所有，合适的才是最好的，对于你用不到
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2020-05-24</span>
+                    
+                            
+                    
+                </div>
+		</div>	
 	
 		<div class="index-li">
 			<a href="/2020/05/24/11.%E5%BE%AE%E6%9C%8D%E5%8A%A1/1.%E5%85%A8%E6%B5%81%E7%A8%8B%E8%A7%A3%E6%9E%90/1.%E7%BC%98%E8%B5%B7/">
@@ -1961,51 +2034,10 @@ Zero Copy机制，内核copy数据直接copy到网络设备，不必经过内核
                 </div>
 		</div>	
 	
-		<div class="index-li">
-			<a href="/2020/05/24/09.%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/2.Kafka/2.%E7%94%9F%E4%BA%A7%E8%80%85/2.%E5%8F%91%E9%80%81%E6%95%B0%E6%8D%AE%E7%9A%84%E6%A8%A1%E5%BC%8F/">
-				<h2 class="index-title">
-					2.发送数据的模式
-				</h2>
-				<div class="index-brief">
-					producer在向kafka写入消息的时候，可以设置参数来确定是否确认kafka接收到数据，这个参数可以设置的值为0、1、all
-0：代表producer往集群发送数据不需要等到集群的返回，确保消息发送成功。安全性最低但是效率最高
-1：代表producer往集群发送数据只要leader应答就可以发
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2020-05-24</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2020/05/24/09.%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/2.Kafka/3.%E5%88%86%E5%8C%BA/%E9%80%89%E6%8B%A9%E5%88%86%E5%8C%BA%E7%9A%843%E7%A7%8D%E6%A8%A1%E5%BC%8F/">
-				<h2 class="index-title">
-					选择分区的3种模式
-				</h2>
-				<div class="index-brief">
-					
-在写入partition的时候可以指定需要写入的partition,如果有指定，则写入对应的 partiotion
-如果没有指定partition，但是设置了数据的key ,则会根据key的值hash一个partition
-如果既没有指定partition，又没有设置key，则会采用轮询方式，即每
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2020-05-24</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
 	
 	<div id="index-paginator">
 		
-			<a class="extend prev" rel="prev" href="/archives/page/2/">&lt;</a><a class="page-number" href="/archives/">1</a><a class="page-number" href="/archives/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/archives/page/4/">4</a><a class="page-number" href="/archives/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/14/">14</a><a class="extend next" rel="next" href="/archives/page/4/">&gt;</a>
+			<a class="extend prev" rel="prev" href="/archives/page/2/">&lt;</a><a class="page-number" href="/archives/">1</a><a class="page-number" href="/archives/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/archives/page/4/">4</a><a class="page-number" href="/archives/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/15/">15</a><a class="extend next" rel="next" href="/archives/page/4/">&gt;</a>
 		
 	</div>
 </div>

@@ -1688,9 +1688,16 @@
 							</ul>
 			
 							<ul>
-								<li class="file">
-									<a href="/2020/05/24/11.%E5%BE%AE%E6%9C%8D%E5%8A%A1/1.%E5%85%A8%E6%B5%81%E7%A8%8B%E8%A7%A3%E6%9E%90/6.%E7%BB%9F%E4%B8%80%E9%85%8D%E7%BD%AE%E4%B8%AD%E5%BF%83/">
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
 										6.统一配置中心
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2020/05/24/11.%E5%BE%AE%E6%9C%8D%E5%8A%A1/1.%E5%85%A8%E6%B5%81%E7%A8%8B%E8%A7%A3%E6%9E%90/6.%E7%BB%9F%E4%B8%80%E9%85%8D%E7%BD%AE%E4%B8%AD%E5%BF%83/1.%E6%96%B9%E6%A1%88%E5%AF%B9%E6%AF%94/">
+										1.方案对比
 									</a>
 								</li>
 								<div class="article-toc" style="display: none;"></div>
@@ -1698,8 +1705,30 @@
 			
 							<ul>
 								<li class="file">
+									<a href="/2020/05/24/11.%E5%BE%AE%E6%9C%8D%E5%8A%A1/1.%E5%85%A8%E6%B5%81%E7%A8%8B%E8%A7%A3%E6%9E%90/6.%E7%BB%9F%E4%B8%80%E9%85%8D%E7%BD%AE%E4%B8%AD%E5%BF%83/2.Etcd/">
+										2.Etcd
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="file">
 									<a href="/2020/05/24/11.%E5%BE%AE%E6%9C%8D%E5%8A%A1/1.%E5%85%A8%E6%B5%81%E7%A8%8B%E8%A7%A3%E6%9E%90/7.%E8%B0%83%E7%94%A8%E9%93%BE%E8%B7%AF%E5%88%86%E6%9E%90/">
 										7.调用链路分析
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2020/05/24/11.%E5%BE%AE%E6%9C%8D%E5%8A%A1/1.%E5%85%A8%E6%B5%81%E7%A8%8B%E8%A7%A3%E6%9E%90/8.%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/">
+										8.持续集成
 									</a>
 								</li>
 								<div class="article-toc" style="display: none;"></div>
@@ -1796,6 +1825,45 @@
 	<!-- 引入正文 -->
 	<div id="content">
 		<div id="index">
+	
+		<div class="index-li">
+			<a href="/2020/05/24/02.Mysql/6.%E9%94%81/5.%E8%A1%8C%E9%94%81%E7%9A%84%E4%B8%89%E7%A7%8D%E7%AE%97%E6%B3%95/">
+				<h2 class="index-title">
+					5.行锁的三种算法
+				</h2>
+				<div class="index-brief">
+					行锁锁（Record Lock）间隙所（Gap Lock）临键锁（Next-Key Lock）【解决幻读的关键】
+间隙锁和临键锁只有在可重复读隔离级别下才会生效
+行锁索引分为主键索引和非主键索引两种，如果一条sql 语句操作了主键索引，Mysql 就会锁定主键索引；如果一条语句操作了非主键索引，My
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2020-05-24</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2020/05/24/02.Mysql/6.%E9%94%81/3.%E6%84%8F%E5%90%91%E9%94%81/">
+				<h2 class="index-title">
+					3.意向锁
+				</h2>
+				<div class="index-brief">
+					InnoDB存储引擎支持多粒度锁定，这种锁定允许事务在行级别上的锁和表级别上的锁同时存在。为了支持多粒度锁定方式，InnoDB存储引擎支持一种额外的的锁方式，称之为意向锁（Intention Lock）。意向锁是将锁定的对象分为多个层次，意向锁以为这事务希望在更细粒度上进行加锁。
+共享锁和排它锁时行
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2020-05-24</span>
+                    
+                            
+                    
+                </div>
+		</div>	
 	
 		<div class="index-li">
 			<a href="/2020/05/24/02.Mysql/6.%E9%94%81/2.%E5%85%B1%E4%BA%AB%E9%94%81%E4%B8%8E%E6%8E%92%E4%BB%96%E9%94%81/">
@@ -1953,59 +2021,10 @@
                 </div>
 		</div>	
 	
-		<div class="index-li">
-			<a href="/2020/05/24/02.Mysql/4.%E4%BC%98%E5%8C%96/1.%E4%BC%98%E5%8C%96%E6%96%B9%E6%A1%88/2.%E7%B4%A2%E5%BC%95%E4%BC%98%E5%8C%96/">
-				<h2 class="index-title">
-					2.索引优化
-				</h2>
-				<div class="index-brief">
-					
-对于经常查询或排序的字段，建议创建索引
-最左前缀匹配原则
-尽量选择区分度高的列作为索引
-尽量的扩展索引，不要新建索引。比如表中已经有a的索引，现在要加(a,b)的索引
-对于常用的需要优化的语句,使用explain去查看索引的使用情况,用于优化索引
-
-
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2020-05-24</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2020/05/24/02.Mysql/4.%E4%BC%98%E5%8C%96/1.%E4%BC%98%E5%8C%96%E6%96%B9%E6%A1%88/1.%E8%A1%A8%E7%BB%93%E6%9E%84%E4%BC%98%E5%8C%96/">
-				<h2 class="index-title">
-					1.表结构优化
-				</h2>
-				<div class="index-brief">
-					选择合适的数据类型
-使用可以存下你的数据的最小的数据类型。
-使用简单的数据类型，int要比varchar类型在Mysql处理上简单。
-尽可能的使用not null定义字段。
-尽量少用text类型，非用不可时最好考虑分表。
-
-表的范式化和反范式化范式化范式化是指数据库设计的规范，目前说到的范式化一般是
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2020-05-24</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
 	
 	<div id="index-paginator">
 		
-			<a class="extend prev" rel="prev" href="/page/10/">&lt;</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><span class="page-number current">11</span><a class="page-number" href="/page/12/">12</a><a class="page-number" href="/page/13/">13</a><a class="page-number" href="/page/14/">14</a><a class="extend next" rel="next" href="/page/12/">&gt;</a>
+			<a class="extend prev" rel="prev" href="/page/10/">&lt;</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><span class="page-number current">11</span><a class="page-number" href="/page/12/">12</a><a class="page-number" href="/page/13/">13</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><a class="extend next" rel="next" href="/page/12/">&gt;</a>
 		
 	</div>
 </div>

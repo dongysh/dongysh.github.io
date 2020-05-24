@@ -1688,9 +1688,16 @@
 							</ul>
 			
 							<ul>
-								<li class="file">
-									<a href="/2020/05/24/11.%E5%BE%AE%E6%9C%8D%E5%8A%A1/1.%E5%85%A8%E6%B5%81%E7%A8%8B%E8%A7%A3%E6%9E%90/6.%E7%BB%9F%E4%B8%80%E9%85%8D%E7%BD%AE%E4%B8%AD%E5%BF%83/">
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
 										6.统一配置中心
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2020/05/24/11.%E5%BE%AE%E6%9C%8D%E5%8A%A1/1.%E5%85%A8%E6%B5%81%E7%A8%8B%E8%A7%A3%E6%9E%90/6.%E7%BB%9F%E4%B8%80%E9%85%8D%E7%BD%AE%E4%B8%AD%E5%BF%83/1.%E6%96%B9%E6%A1%88%E5%AF%B9%E6%AF%94/">
+										1.方案对比
 									</a>
 								</li>
 								<div class="article-toc" style="display: none;"></div>
@@ -1698,8 +1705,30 @@
 			
 							<ul>
 								<li class="file">
+									<a href="/2020/05/24/11.%E5%BE%AE%E6%9C%8D%E5%8A%A1/1.%E5%85%A8%E6%B5%81%E7%A8%8B%E8%A7%A3%E6%9E%90/6.%E7%BB%9F%E4%B8%80%E9%85%8D%E7%BD%AE%E4%B8%AD%E5%BF%83/2.Etcd/">
+										2.Etcd
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="file">
 									<a href="/2020/05/24/11.%E5%BE%AE%E6%9C%8D%E5%8A%A1/1.%E5%85%A8%E6%B5%81%E7%A8%8B%E8%A7%A3%E6%9E%90/7.%E8%B0%83%E7%94%A8%E9%93%BE%E8%B7%AF%E5%88%86%E6%9E%90/">
 										7.调用链路分析
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2020/05/24/11.%E5%BE%AE%E6%9C%8D%E5%8A%A1/1.%E5%85%A8%E6%B5%81%E7%A8%8B%E8%A7%A3%E6%9E%90/8.%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/">
+										8.持续集成
 									</a>
 								</li>
 								<div class="article-toc" style="display: none;"></div>
@@ -1796,6 +1825,47 @@
 	<!-- 引入正文 -->
 	<div id="content">
 		<div id="index">
+	
+		<div class="index-li">
+			<a href="/2020/05/24/02.Mysql/3.%E7%B4%A2%E5%BC%95/1.%E7%B4%A2%E5%BC%95%E6%A6%82%E5%BF%B5/">
+				<h2 class="index-title">
+					1.索引概念
+				</h2>
+				<div class="index-brief">
+					
+索引是 MySQL 数据库中的重要的数据结构之一，它是数据库性能调优技术的基础，常用于实现数据的快速检索。
+索引就是根据表中的一列或若干列按照一定顺序建立的列值与记录行之间的对应关系表，实质上是一张描述索引列的列值与原表中记录行之间一一对应关系的有序表。
+在数据之外，数据库系统还维护着满足特定查找
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2020-05-24</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2020/05/24/02.Mysql/2.%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/5.%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%9A%84%E9%80%89%E6%8B%A9/">
+				<h2 class="index-title">
+					5.数据类型的选择
+				</h2>
+				<div class="index-brief">
+					合理选择类型可以大大减少磁盘空间及磁盘I/0读写开销，减少内存占用，减少CPU的占用率
+选择相对简单的数据类型数字类型相对字符串类型要简单的多，尤其是在比较运算时，所以我们应该选择最简单的数据类型。比如有的人就喜欢用时间戳来存储日期，因为日期是一个参与比较的重要字段。
+列属性尽量为NOT NULLM
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2020-05-24</span>
+                    
+                            
+                    
+                </div>
+		</div>	
 	
 		<div class="index-li">
 			<a href="/2020/05/24/02.Mysql/2.%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/4.%E6%97%B6%E9%97%B4%E7%B1%BB%E5%9E%8B/">
@@ -1971,50 +2041,10 @@ PHP7的复杂数据类型（比如数组和对象
                 </div>
 		</div>	
 	
-		<div class="index-li">
-			<a href="/2020/05/24/01.PHP/1.%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/1.PHP7%E4%BB%8B%E7%BB%8D/4.%E6%95%B0%E7%BB%84%E5%BA%95%E5%B1%82%E5%AE%9E%E7%8E%B0/">
-				<h2 class="index-title">
-					4.数组底层实现
-				</h2>
-				<div class="index-brief">
-					实现原理
-PHP 数组是基于哈希表实现的，而与一般哈希表不同的是 PHP 的数组还实现了元素的有序性，就是插入的元素从内存上来看是连续的而不是乱序的，为了实现这个有序性 PHP 采用了「映射表」技术。此外，PHP采用链地址法解决哈希冲突。
-
-映射表和数组元素在同一片连续的内存中，映射表是一个长度与存
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2020-05-24</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2020/05/24/01.PHP/1.%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/1.PHP7%E4%BB%8B%E7%BB%8D/3.zval%E5%8F%98%E5%8C%96/">
-				<h2 class="index-title">
-					3.zval变化
-				</h2>
-				<div class="index-brief">
-					PHP7 zval变化答： zval 不再单独从堆上分配内存并且不自己存储引用计数。需要使用 zval 指针的复杂类型（比如字符串、数组和对象）会自己存储引用计数。这样就可以有更少的内存分配操作、更少的间接指针使用以及更少的内存分配。
-PHP5与PHP7 zval对比PHP5 中 zval 实现方式
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2020-05-24</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
 	
 	<div id="index-paginator">
 		
-			<a class="extend prev" rel="prev" href="/archives/2020/05/page/12/">&lt;</a><a class="page-number" href="/archives/2020/05/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2020/05/page/11/">11</a><a class="page-number" href="/archives/2020/05/page/12/">12</a><span class="page-number current">13</span><a class="page-number" href="/archives/2020/05/page/14/">14</a><a class="extend next" rel="next" href="/archives/2020/05/page/14/">&gt;</a>
+			<a class="extend prev" rel="prev" href="/archives/2020/05/page/12/">&lt;</a><a class="page-number" href="/archives/2020/05/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2020/05/page/11/">11</a><a class="page-number" href="/archives/2020/05/page/12/">12</a><span class="page-number current">13</span><a class="page-number" href="/archives/2020/05/page/14/">14</a><a class="page-number" href="/archives/2020/05/page/15/">15</a><a class="extend next" rel="next" href="/archives/2020/05/page/14/">&gt;</a>
 		
 	</div>
 </div>

@@ -1688,9 +1688,16 @@
 							</ul>
 			
 							<ul>
-								<li class="file">
-									<a href="/2020/05/24/11.%E5%BE%AE%E6%9C%8D%E5%8A%A1/1.%E5%85%A8%E6%B5%81%E7%A8%8B%E8%A7%A3%E6%9E%90/6.%E7%BB%9F%E4%B8%80%E9%85%8D%E7%BD%AE%E4%B8%AD%E5%BF%83/">
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
 										6.统一配置中心
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2020/05/24/11.%E5%BE%AE%E6%9C%8D%E5%8A%A1/1.%E5%85%A8%E6%B5%81%E7%A8%8B%E8%A7%A3%E6%9E%90/6.%E7%BB%9F%E4%B8%80%E9%85%8D%E7%BD%AE%E4%B8%AD%E5%BF%83/1.%E6%96%B9%E6%A1%88%E5%AF%B9%E6%AF%94/">
+										1.方案对比
 									</a>
 								</li>
 								<div class="article-toc" style="display: none;"></div>
@@ -1698,8 +1705,30 @@
 			
 							<ul>
 								<li class="file">
+									<a href="/2020/05/24/11.%E5%BE%AE%E6%9C%8D%E5%8A%A1/1.%E5%85%A8%E6%B5%81%E7%A8%8B%E8%A7%A3%E6%9E%90/6.%E7%BB%9F%E4%B8%80%E9%85%8D%E7%BD%AE%E4%B8%AD%E5%BF%83/2.Etcd/">
+										2.Etcd
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="file">
 									<a href="/2020/05/24/11.%E5%BE%AE%E6%9C%8D%E5%8A%A1/1.%E5%85%A8%E6%B5%81%E7%A8%8B%E8%A7%A3%E6%9E%90/7.%E8%B0%83%E7%94%A8%E9%93%BE%E8%B7%AF%E5%88%86%E6%9E%90/">
 										7.调用链路分析
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2020/05/24/11.%E5%BE%AE%E6%9C%8D%E5%8A%A1/1.%E5%85%A8%E6%B5%81%E7%A8%8B%E8%A7%A3%E6%9E%90/8.%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/">
+										8.持续集成
 									</a>
 								</li>
 								<div class="article-toc" style="display: none;"></div>
@@ -1798,12 +1827,37 @@
 		<div id="index">
 	
 		<div class="index-li">
+			<a href="/2020/05/24/11.%E5%BE%AE%E6%9C%8D%E5%8A%A1/1.%E5%85%A8%E6%B5%81%E7%A8%8B%E8%A7%A3%E6%9E%90/8.%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/">
+				<h2 class="index-title">
+					8.持续集成
+				</h2>
+				<div class="index-brief">
+					docker+jenkins+git+registry
+
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2020-05-24</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
 			<a href="/2020/05/24/11.%E5%BE%AE%E6%9C%8D%E5%8A%A1/1.%E5%85%A8%E6%B5%81%E7%A8%8B%E8%A7%A3%E6%9E%90/4.%E6%9C%8D%E5%8A%A1%E7%BD%91%E5%85%B3/1.%E6%96%B9%E6%A1%88%E5%AF%B9%E6%AF%94/">
 				<h2 class="index-title">
 					1.方案对比
 				</h2>
 				<div class="index-brief">
-					
+					微服务的拆分导致服务分散，如果一个大的业务要对外提供输出，每个服务单独对外提供调用对接入方不友好并且调用也会很复杂。所以出现了网关，网关主要实现请求的路由转发，负载均衡，统一校验，请求过滤等功能。
+目前社区主流的网关有四个：Kong，Zuul，Traefik，Ambassador。 
+
+
+
+特性
+K
 					...
 				</div>
 			</a>
@@ -1821,7 +1875,10 @@
 					1.方案对比
 				</h2>
 				<div class="index-brief">
-					
+					下面列出可以被用作注册中心的组件他们的特性对比：
+
+
+
 					...
 				</div>
 			</a>
@@ -1839,7 +1896,9 @@
 					2.通讯规范
 				</h2>
 				<div class="index-brief">
-					
+					JSON-RPC远程调用协议JSON-RPC简介JSON-RPC是一种基于JSON的跨语言远程调用协议。有文本传输数据小，便于调试扩展的特点。
+请求JSON-RPC非常简单，在请求时向服务器传输数据格式如下(基于JSON2.0)
+123456&#123;     "jsonrpc" : 2.0,  
 					...
 				</div>
 			</a>
@@ -1857,7 +1916,8 @@
 					1.通讯协议
 				</h2>
 				<div class="index-brief">
-					
+					常见通信协议及区别TCP/IPTCP/IP协议是一个协议簇。里面包括很多协议的。UDP只是其中的一个。之所以命名为TCP/IP协议，因为TCP,IP协议是两个很重要的协议，就用他两命名了。
+TCP和UDPtcp和udp都是传输协议，主要区别是tcp协议连接需要3次握手，断开需要四次握手，是通过流来传
 					...
 				</div>
 			</a>
@@ -1964,28 +2024,10 @@ B+TreeB-Tree有许多变种，其中最常见的是B+Tree，例如MySQL就普遍
                 </div>
 		</div>	
 	
-		<div class="index-li">
-			<a href="/2020/05/24/12.%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84/%E7%A7%92%E6%9D%80%E7%B3%BB%E7%BB%9F/">
-				<h2 class="index-title">
-					秒杀系统
-				</h2>
-				<div class="index-brief">
-					
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2020-05-24</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
 	
 	<div id="index-paginator">
 		
-			<span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="page-number" href="/archives/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/14/">14</a><a class="extend next" rel="next" href="/archives/page/2/">&gt;</a>
+			<span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="page-number" href="/archives/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/15/">15</a><a class="extend next" rel="next" href="/archives/page/2/">&gt;</a>
 		
 	</div>
 </div>

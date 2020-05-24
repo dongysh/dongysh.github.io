@@ -1690,9 +1690,16 @@
 							</ul>
 			
 							<ul>
-								<li class="file">
-									<a href="/2020/05/24/11.%E5%BE%AE%E6%9C%8D%E5%8A%A1/1.%E5%85%A8%E6%B5%81%E7%A8%8B%E8%A7%A3%E6%9E%90/6.%E7%BB%9F%E4%B8%80%E9%85%8D%E7%BD%AE%E4%B8%AD%E5%BF%83/">
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
 										6.统一配置中心
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2020/05/24/11.%E5%BE%AE%E6%9C%8D%E5%8A%A1/1.%E5%85%A8%E6%B5%81%E7%A8%8B%E8%A7%A3%E6%9E%90/6.%E7%BB%9F%E4%B8%80%E9%85%8D%E7%BD%AE%E4%B8%AD%E5%BF%83/1.%E6%96%B9%E6%A1%88%E5%AF%B9%E6%AF%94/">
+										1.方案对比
 									</a>
 								</li>
 								<div class="article-toc" style="display: none;"></div>
@@ -1700,8 +1707,30 @@
 			
 							<ul>
 								<li class="file">
+									<a href="/2020/05/24/11.%E5%BE%AE%E6%9C%8D%E5%8A%A1/1.%E5%85%A8%E6%B5%81%E7%A8%8B%E8%A7%A3%E6%9E%90/6.%E7%BB%9F%E4%B8%80%E9%85%8D%E7%BD%AE%E4%B8%AD%E5%BF%83/2.Etcd/">
+										2.Etcd
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="file">
 									<a href="/2020/05/24/11.%E5%BE%AE%E6%9C%8D%E5%8A%A1/1.%E5%85%A8%E6%B5%81%E7%A8%8B%E8%A7%A3%E6%9E%90/7.%E8%B0%83%E7%94%A8%E9%93%BE%E8%B7%AF%E5%88%86%E6%9E%90/">
 										7.调用链路分析
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2020/05/24/11.%E5%BE%AE%E6%9C%8D%E5%8A%A1/1.%E5%85%A8%E6%B5%81%E7%A8%8B%E8%A7%A3%E6%9E%90/8.%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/">
+										8.持续集成
 									</a>
 								</li>
 								<div class="article-toc" style="display: none;"></div>
@@ -1813,7 +1842,18 @@
 </div>
 
 <div id="article-content">
-	
+	<h1 id="两阶段提交（2PC）"><a href="#两阶段提交（2PC）" class="headerlink" title="两阶段提交（2PC）"></a>两阶段提交（2PC）</h1><h2 id="核心思想"><a href="#核心思想" class="headerlink" title="核心思想"></a>核心思想</h2><p>分布式事务由事务管理器（TM）统一管理。</p>
+<p>XA 是一个两阶段提交协议，该协议分为以下两个阶段：<br>第一阶段：事务协调器要求每个涉及到事务的数据库预提交(precommit)此操作，并反映是否可以提交.<br>第二阶段：事务协调器要求每个数据库提交数据。<br>其中，如果有任何一个数据库否决此次提交，那么所有数据库都会被要求回滚它们在此事务中的那部分信息。</p>
+<h2 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h2><p>优点： 尽量保证了数据的强一致，适合对数据强一致要求很高的关键领域。（其实也不能100%保证强一致）<br>缺点： 实现复杂，牺牲了可用性，对性能影响较大，不适合高并发高性能场景</p>
+<h1 id="补偿事务（TCC）"><a href="#补偿事务（TCC）" class="headerlink" title="补偿事务（TCC）"></a>补偿事务（TCC）</h1><h2 id="核心思想-1"><a href="#核心思想-1" class="headerlink" title="核心思想"></a>核心思想</h2><p>TCC 其实就是采用的补偿机制，其核心思想是：针对每个操作，都要注册一个与其对应的确认和补偿（撤销）操作。它分为三个阶段：<br>1、Try 阶段主要是对业务系统做检测及资源预留<br>2、Confirm 阶段主要是对业务系统做确认提交，Try阶段执行成功并开始执行 Confirm阶段时，默认 Confirm阶段是不会出错的。即：只要Try成功，Confirm一定成功。<br>3、Cancel 阶段主要是在业务执行错误，需要回滚的状态下执行的业务取消，预留资源释放。</p>
+<h1 id="本地消息表（异步确保）"><a href="#本地消息表（异步确保）" class="headerlink" title="本地消息表（异步确保）"></a>本地消息表（异步确保）</h1><h2 id="基本思路"><a href="#基本思路" class="headerlink" title="基本思路"></a>基本思路</h2><p>1、消息生产方，需要额外建一个消息表，并记录消息发送状态。消息表和业务数据要在一个事务里提交，也就是说他们要在一个数据库里面。然后消息会经过MQ发送到消息的消费方。如果消息发送失败，会进行重试发送。<br>2、消息消费方，需要处理这个消息，并完成自己的业务逻辑。此时如果本地事务处理成功，表明已经处理成功了，如果处理失败，那么就会重试执行。如果是业务上面的失败，可以给生产方发送一个业务补偿消息，通知生产方进行回滚等操作。<br>3、生产方和消费方定时扫描本地消息表，把还没处理完成的消息或者失败的消息再发送一遍。</p>
+<h2 id="优缺点-1"><a href="#优缺点-1" class="headerlink" title="优缺点"></a>优缺点</h2><p>优点： 一种非常经典的实现，避免了分布式事务，实现了最终一致性。<br>缺点： 消息表会耦合到业务系统中，如果没有封装好的解决方案，会有很多杂活需要处理。</p>
+<h1 id="MQ-事务消息"><a href="#MQ-事务消息" class="headerlink" title="MQ 事务消息"></a>MQ 事务消息</h1><p>有一些第三方的MQ是支持事务消息的，比如RocketMQ，他们支持事务消息的方式也是类似于采用的二阶段提交，但是市面上一些主流的MQ都是不支持事务消息的，比如 Kafka</p>
+<h2 id="基本思路-1"><a href="#基本思路-1" class="headerlink" title="基本思路"></a>基本思路</h2><p>第一阶段Prepared消息，会拿到消息的地址。<br>第二阶段执行本地事务，<br>第三阶段通过第一阶段拿到的地址去访问消息，并修改状态。</p>
+<p>也就是说在业务方法内要想消息队列提交两次请求，一次发送消息和一次确认消息。如果确认消息发送失败了RocketMQ会定期扫描消息集群中的事务消息，这时候发现了Prepared消息，它会向消息发送者确认，所以生产方需要实现一个check接口，RocketMQ会根据发送端设置的策略来决定是回滚还是继续发送确认消息。这样就保证了消息发送与本地事务同时成功或同时失败。</p>
+<h2 id="优缺点-2"><a href="#优缺点-2" class="headerlink" title="优缺点"></a>优缺点</h2><p>优点： 实现了最终一致性，不需要依赖本地数据库事务。<br>缺点： 实现难度大，主流MQ不支持</p>
+<h1 id="Sagas-事务模型"><a href="#Sagas-事务模型" class="headerlink" title="Sagas 事务模型"></a>Sagas 事务模型</h1><h2 id="核心思想-2"><a href="#核心思想-2" class="headerlink" title="核心思想"></a>核心思想</h2><p>拆分分布式系统中的长事务为多个短事务，或者叫多个本地事务，然后由 Sagas 工作流引擎负责协调，如果整个流程正常结束，那么就算是业务成功完成，如果在这过程中实现失败，那么Sagas工作流引擎就会以相反的顺序调用补偿操作，重新进行业务回滚。</p>
+
 </div>
 
 

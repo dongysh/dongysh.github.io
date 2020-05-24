@@ -1690,9 +1690,16 @@
 							</ul>
 			
 							<ul>
-								<li class="file">
-									<a href="/2020/05/24/11.%E5%BE%AE%E6%9C%8D%E5%8A%A1/1.%E5%85%A8%E6%B5%81%E7%A8%8B%E8%A7%A3%E6%9E%90/6.%E7%BB%9F%E4%B8%80%E9%85%8D%E7%BD%AE%E4%B8%AD%E5%BF%83/">
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
 										6.统一配置中心
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2020/05/24/11.%E5%BE%AE%E6%9C%8D%E5%8A%A1/1.%E5%85%A8%E6%B5%81%E7%A8%8B%E8%A7%A3%E6%9E%90/6.%E7%BB%9F%E4%B8%80%E9%85%8D%E7%BD%AE%E4%B8%AD%E5%BF%83/1.%E6%96%B9%E6%A1%88%E5%AF%B9%E6%AF%94/">
+										1.方案对比
 									</a>
 								</li>
 								<div class="article-toc" style="display: none;"></div>
@@ -1700,8 +1707,30 @@
 			
 							<ul>
 								<li class="file">
+									<a href="/2020/05/24/11.%E5%BE%AE%E6%9C%8D%E5%8A%A1/1.%E5%85%A8%E6%B5%81%E7%A8%8B%E8%A7%A3%E6%9E%90/6.%E7%BB%9F%E4%B8%80%E9%85%8D%E7%BD%AE%E4%B8%AD%E5%BF%83/2.Etcd/">
+										2.Etcd
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="file">
 									<a href="/2020/05/24/11.%E5%BE%AE%E6%9C%8D%E5%8A%A1/1.%E5%85%A8%E6%B5%81%E7%A8%8B%E8%A7%A3%E6%9E%90/7.%E8%B0%83%E7%94%A8%E9%93%BE%E8%B7%AF%E5%88%86%E6%9E%90/">
 										7.调用链路分析
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2020/05/24/11.%E5%BE%AE%E6%9C%8D%E5%8A%A1/1.%E5%85%A8%E6%B5%81%E7%A8%8B%E8%A7%A3%E6%9E%90/8.%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/">
+										8.持续集成
 									</a>
 								</li>
 								<div class="article-toc" style="display: none;"></div>
@@ -1813,7 +1842,61 @@
 </div>
 
 <div id="article-content">
-	
+	<h1 id="UUID"><a href="#UUID" class="headerlink" title="UUID"></a>UUID</h1><h2 id="核心思想"><a href="#核心思想" class="headerlink" title="核心思想"></a>核心思想</h2><p>结合机器的网卡（基于名字空间/名字的散列值MD5/SHA1）、当地时间（基于时间戳&amp;时钟序列）、一个随记数来生成UUID。</p>
+<h2 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h2><p>aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee（即包含32个16进制数字，以连字号-分为五段，最终形成“8-4-4-4-12”的36个字符的字符串，即32个英数字母+4个连字号）。</p>
+<h2 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h2><p>优点：<br>1、本地生成，没有网络消耗，生成简单，没有高可用风险。<br>缺点：<br>1、不易于存储：UUID太长，16字节128位，通常以36长度的字符串表示，很多场景不适用。<br>2、信息不安全：基于MAC地址生成UUID的算法可能会造成MAC地址泄露，这个漏洞曾被用于寻找梅丽莎病毒的制作者位置。<br>3、无序查询效率低：由于生成的UUID是无序不可读的字符串，所以其查询效率低。</p>
+<h1 id="数据库自增ID"><a href="#数据库自增ID" class="headerlink" title="数据库自增ID"></a>数据库自增ID</h1><h2 id="核心思想-1"><a href="#核心思想-1" class="headerlink" title="核心思想"></a>核心思想</h2><p>使用数据库的id自增策略（如: Mysql的auto_increment）</p>
+<h2 id="优缺点-1"><a href="#优缺点-1" class="headerlink" title="优缺点"></a>优缺点</h2><p>优点：<br>1、简单，天然有序。<br>缺点：<br>1、并发性不好。<br>2、数据库写压力大。<br>3、数据库故障后不可使用。<br>4、存在数量泄露风险。</p>
+<h1 id="数据库多主模式"><a href="#数据库多主模式" class="headerlink" title="数据库多主模式"></a>数据库多主模式</h1><h2 id="核心思想-2"><a href="#核心思想-2" class="headerlink" title="核心思想"></a>核心思想</h2><p>将数据库进行水平拆分，每个数据库设置不同的初始值和相同的自增步长。可保证每台数据库生成的ID是不冲突的，但这种固定步长的方式也会带来扩容的问题，很容易想到当扩容时会出现无ID初始值可分的窘境。解决方案有：</p>
+<ol>
+<li>根据扩容考虑决定步长。</li>
+<li>增加其他位标记区分扩容。</li>
+</ol>
+<p>这其实都是在需求与方案间的权衡，根据需求来选择最适合的方式。</p>
+<h1 id="号段模式"><a href="#号段模式" class="headerlink" title="号段模式"></a>号段模式</h1><h2 id="核心思想-3"><a href="#核心思想-3" class="headerlink" title="核心思想"></a>核心思想</h2><p>如果使用单台机器做ID生成，可以避免固定步长带来的扩容问题。每次批量生成一批ID给不同的机器去慢慢消费，这样数据库的压力也会减小到N分之一，且故障后可坚持一段时间。 </p>
+<p>缺点是服务器重启、单点故障会造成ID不连续</p>
+<h1 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h1><h2 id="核心思想-4"><a href="#核心思想-4" class="headerlink" title="核心思想"></a>核心思想</h2><p>Redis的所有命令操作都是单线程的，本身提供像 incr 和 increby 这样的自增原子命令，所以能保证生成的 ID 肯定是唯一有序的。</p>
+<h2 id="优缺点-2"><a href="#优缺点-2" class="headerlink" title="优缺点"></a>优缺点</h2><p>优点：</p>
+<ol>
+<li>不依赖于数据库，灵活方便，且性能优于数据库。</li>
+<li>数字ID天然排序，对分页或者需要排序的结果很有帮助。</li>
+</ol>
+<p>缺点：</p>
+<ol>
+<li>如果系统中没有Redis，还需要引入新的组件，增加系统复杂度。</li>
+<li>需要编码和配置的工作量比较大。</li>
+</ol>
+<h2 id="优化方案"><a href="#优化方案" class="headerlink" title="优化方案"></a>优化方案</h2><p>考虑到单节点的性能瓶颈，可以使用 Redis 集群来获取更高的吞吐量，并利用上面的方案来配置集群：</p>
+<ol>
+<li>数据库水平拆分，设置不同的初始值和相同的步长； </li>
+<li>批量缓存自增ID。</li>
+</ol>
+<h1 id="雪花算法"><a href="#雪花算法" class="headerlink" title="雪花算法"></a>雪花算法</h1><h2 id="核心思想-5"><a href="#核心思想-5" class="headerlink" title="核心思想"></a>核心思想</h2><p>采用bigint（64bit）作为id生成类型，并将所占的64bit 划分成多段。</p>
+<p>说明：</p>
+<ol>
+<li>1位标识：由于long基本类型在Java中是带符号的，最高位是符号位，正数是0，负数是1，所以id一般是正数，最高位是0。</li>
+<li>41位时间截(毫秒级）：需要注意的是，41位时间截不是存储当前时间的时间截，而是存储时间截的差值（当前时间截 - 开始时间截）得到的值，这里的开始时间截，一般是指我们的id生成器开始使用的时间截，由我们的程序来指定。41位的毫秒时间截，可以使用69年（即T =（1L &lt;&lt; 41）/（1000 * 60 * 60 * 24 * 365）= 69）。</li>
+<li>10位的数据机器位：包括5位数据中心标识Id（datacenterId）、5位机器标识Id(workerId)，最多可以部署1024个节点（即1 &lt;&lt; 10 = 1024）。超过这个数量，生成的ID就有可能会冲突。</li>
+<li>12位序列：毫秒内的计数，12位的计数顺序号支持每个节点每毫秒（同一机器，同一时间截）产生4096个ID序号（即1 &lt;&lt; 12 = 4096）。</li>
+</ol>
+<p>PS：全部结构标识（1+41+10+12=64）加起来刚好64位，刚好凑成一个Long型。</p>
+<h2 id="优缺点-3"><a href="#优缺点-3" class="headerlink" title="优缺点"></a>优缺点</h2><p>优点：</p>
+<ol>
+<li>整体上按照时间按时间趋势递增，后续插入索引树的时候性能较好。</li>
+<li>整个分布式系统内不会产生ID碰撞（由数据中心标识ID、机器标识ID作区分）。</li>
+<li>本地生成，且不依赖数据库（或第三方组件），没有网络消耗，所以效率高（每秒能够产生26万ID左右）。</li>
+</ol>
+<p>缺点：</p>
+<ol>
+<li>由于雪花算法是强依赖于时间的，在分布式环境下，如果发生时钟回拨，很可能会引起ID重复、ID乱序、服务会处于不可用状态等问题。</li>
+</ol>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><ol>
+<li>将ID生成交给少量服务器，并关闭时钟同步。</li>
+<li>直接报错，交给上层业务处理。</li>
+<li>如果回拨时间较短，在耗时要求内，比如5ms，那么等待回拨时长后再进行生成。</li>
+<li>如果回拨时间很长，那么无法等待，可以匀出少量位（1~2位）作为回拨位，一旦时钟回拨，将回拨位加1，可得到不一样的ID，2位回拨位允许标记3次时钟回拨，基本够使用。如果超出了，可以再选择抛出异常。</li>
+</ol>
+
 </div>
 
 

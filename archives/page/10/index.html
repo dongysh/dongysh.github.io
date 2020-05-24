@@ -1688,9 +1688,16 @@
 							</ul>
 			
 							<ul>
-								<li class="file">
-									<a href="/2020/05/24/11.%E5%BE%AE%E6%9C%8D%E5%8A%A1/1.%E5%85%A8%E6%B5%81%E7%A8%8B%E8%A7%A3%E6%9E%90/6.%E7%BB%9F%E4%B8%80%E9%85%8D%E7%BD%AE%E4%B8%AD%E5%BF%83/">
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
 										6.统一配置中心
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2020/05/24/11.%E5%BE%AE%E6%9C%8D%E5%8A%A1/1.%E5%85%A8%E6%B5%81%E7%A8%8B%E8%A7%A3%E6%9E%90/6.%E7%BB%9F%E4%B8%80%E9%85%8D%E7%BD%AE%E4%B8%AD%E5%BF%83/1.%E6%96%B9%E6%A1%88%E5%AF%B9%E6%AF%94/">
+										1.方案对比
 									</a>
 								</li>
 								<div class="article-toc" style="display: none;"></div>
@@ -1698,8 +1705,30 @@
 			
 							<ul>
 								<li class="file">
+									<a href="/2020/05/24/11.%E5%BE%AE%E6%9C%8D%E5%8A%A1/1.%E5%85%A8%E6%B5%81%E7%A8%8B%E8%A7%A3%E6%9E%90/6.%E7%BB%9F%E4%B8%80%E9%85%8D%E7%BD%AE%E4%B8%AD%E5%BF%83/2.Etcd/">
+										2.Etcd
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="file">
 									<a href="/2020/05/24/11.%E5%BE%AE%E6%9C%8D%E5%8A%A1/1.%E5%85%A8%E6%B5%81%E7%A8%8B%E8%A7%A3%E6%9E%90/7.%E8%B0%83%E7%94%A8%E9%93%BE%E8%B7%AF%E5%88%86%E6%9E%90/">
 										7.调用链路分析
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2020/05/24/11.%E5%BE%AE%E6%9C%8D%E5%8A%A1/1.%E5%85%A8%E6%B5%81%E7%A8%8B%E8%A7%A3%E6%9E%90/8.%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/">
+										8.持续集成
 									</a>
 								</li>
 								<div class="article-toc" style="display: none;"></div>
@@ -1796,6 +1825,44 @@
 	<!-- 引入正文 -->
 	<div id="content">
 		<div id="index">
+	
+		<div class="index-li">
+			<a href="/2020/05/24/03.Nginx/01.%E5%AE%9A%E4%B9%89/">
+				<h2 class="index-title">
+					01.定义
+				</h2>
+				<div class="index-brief">
+					Nginx是一个高性能的HTTP和反向代理web服务器，因为可以用于负载均衡和HTTP缓存，它可以处理2-3万并发连接数，官方监测能支持5万并发
+
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2020-05-24</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2020/05/24/02.Mysql/8.%E5%BC%82%E5%B8%B8%E6%81%A2%E5%A4%8D/2.%E6%97%A5%E5%BF%97/">
+				<h2 class="index-title">
+					2.日志
+				</h2>
+				<div class="index-brief">
+					Redo logredolog即重做日志，数据库安装目录下的data/ib_logfile指的就是redolog文件。redolog作为一种对数据的恢复操作，恢复的是提交事务修改的页操作
+Binary log二进制日志，也称binlog，记录了对数据库只需更改的所有操作（不包括select和show
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2020-05-24</span>
+                    
+                            
+                    
+                </div>
+		</div>	
 	
 		<div class="index-li">
 			<a href="/2020/05/24/02.Mysql/8.%E5%BC%82%E5%B8%B8%E6%81%A2%E5%A4%8D/1.%E4%B8%A4%E9%98%B6%E6%AE%B5%E6%8F%90%E4%BA%A4/">
@@ -1955,49 +2022,10 @@ slave服务器会在一定时间间隔内对master二进制日志进行探测其
                 </div>
 		</div>	
 	
-		<div class="index-li">
-			<a href="/2020/05/24/02.Mysql/6.%E9%94%81/5.%E8%A1%8C%E9%94%81%E7%9A%84%E4%B8%89%E7%A7%8D%E7%AE%97%E6%B3%95/">
-				<h2 class="index-title">
-					5.行锁的三种算法
-				</h2>
-				<div class="index-brief">
-					行锁锁（Record Lock）间隙所（Gap Lock）临键锁（Next-Key Lock）【解决幻读的关键】
-间隙锁和临键锁只有在可重复读隔离级别下才会生效
-行锁索引分为主键索引和非主键索引两种，如果一条sql 语句操作了主键索引，Mysql 就会锁定主键索引；如果一条语句操作了非主键索引，My
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2020-05-24</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2020/05/24/02.Mysql/6.%E9%94%81/3.%E6%84%8F%E5%90%91%E9%94%81/">
-				<h2 class="index-title">
-					3.意向锁
-				</h2>
-				<div class="index-brief">
-					InnoDB存储引擎支持多粒度锁定，这种锁定允许事务在行级别上的锁和表级别上的锁同时存在。为了支持多粒度锁定方式，InnoDB存储引擎支持一种额外的的锁方式，称之为意向锁（Intention Lock）。意向锁是将锁定的对象分为多个层次，意向锁以为这事务希望在更细粒度上进行加锁。
-共享锁和排它锁时行
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2020-05-24</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
 	
 	<div id="index-paginator">
 		
-			<a class="extend prev" rel="prev" href="/archives/page/9/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/8/">8</a><a class="page-number" href="/archives/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/archives/page/11/">11</a><a class="page-number" href="/archives/page/12/">12</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/14/">14</a><a class="extend next" rel="next" href="/archives/page/11/">&gt;</a>
+			<a class="extend prev" rel="prev" href="/archives/page/9/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/8/">8</a><a class="page-number" href="/archives/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/archives/page/11/">11</a><a class="page-number" href="/archives/page/12/">12</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/15/">15</a><a class="extend next" rel="next" href="/archives/page/11/">&gt;</a>
 		
 	</div>
 </div>
