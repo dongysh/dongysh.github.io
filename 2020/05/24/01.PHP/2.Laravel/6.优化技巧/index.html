@@ -1842,7 +1842,33 @@
 </div>
 
 <div id="article-content">
-	
+	<h1 id="配置信息缓存"><a href="#配置信息缓存" class="headerlink" title="配置信息缓存"></a>配置信息缓存</h1><p>生产环境中的 应该 使用『配置信息缓存』来加速 Laravel 配置信息的读取。</p>
+<p>使用以下 Artisan 自带命令，把 config 文件夹里所有配置信息合并到一个文件里，减少运行时文件的载入数量：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php artisan config:cache</span><br></pre></td></tr></table></figure>
+
+<h1 id="路由缓存"><a href="#路由缓存" class="headerlink" title="路由缓存"></a>路由缓存</h1><p>生产环境中的 应该 使用『路由缓存』来加速 Laravel 的路由注册。</p>
+<p>路由缓存可以有效的提高路由器的注册效率，在大型应用程序中效果越加明显，可以使用以下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php artisan route:cache</span><br></pre></td></tr></table></figure>
+
+<h1 id="类映射加载优化"><a href="#类映射加载优化" class="headerlink" title="类映射加载优化"></a>类映射加载优化</h1><p>optimize 命令把常用加载的类合并到一个文件里，通过减少文件的加载，来提高运行效率。生产环境中的 应该 使用 optimize 命令来优化类的加载速度：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php artisan optimize --force</span><br></pre></td></tr></table></figure>
+
+<h1 id="自动加载优化"><a href="#自动加载优化" class="headerlink" title="自动加载优化"></a>自动加载优化</h1><p>此命令不止针对于 Laravel 程序，适用于所有使用 composer 来构建的程序。此命令会把 PSR-0 和 PSR-4 转换为一个类映射表，来提高类的加载速度。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">composer dumpautoload -o</span><br></pre></td></tr></table></figure>
+
+<p>使用 Memcached 来存储会话</p>
+<p>每一个 Laravel 的请求，都会产生会话，修改会话的存储方式能有效提高程序效率。会话的配置文件是 config/session.php。生产环境中的 必须 使用 Memcached 或者 Redis 等专业的缓存软件来存储会话，应该 优先选择 Memcached：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#39;driver&#39; &#x3D;&gt; &#39;memcached&#39;,</span><br></pre></td></tr></table></figure>
+
+<p>使用专业缓存驱动器</p>
+<p>「缓存」是提高应用程序运行效率的法宝之一，Laravel 默认缓存驱动是 file 文件缓存，生产环境中的 必须 使用专业的缓存系统，如 Redis 或者 Memcached。应该 优先考虑 Redis。应该 避免使用数据库缓存。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#39;default&#39; &#x3D;&gt; &#39;redis&#39;,</span><br></pre></td></tr></table></figure>
+
+<p>数据库请求优化</p>
+<p>关联模型数据读取时 必须 使用 延迟预加载 和 预加载 。<br>为数据集书写缓存逻辑<br>应该合理的使用 Laravel 提供的缓存层操作，把从数据库里面拿出来的数据集合进行缓存，减少数据库的压力，运行在内存上的专业缓存软件对数据的读取也远远快于数据库。</p>
+<h1 id="使用即时编译器"><a href="#使用即时编译器" class="headerlink" title="使用即时编译器"></a>使用即时编译器</h1><p>可以使用 OpCache 进行优化。OpCache 都能轻轻松松的让你的应用程序在不用做任何修改的情况下，直接提高 50% 或者更高的性能<br>前端资源合并</p>
+<h1 id="作为优化的标准："><a href="#作为优化的标准：" class="headerlink" title="作为优化的标准："></a>作为优化的标准：</h1><p>一个页面 应该 只加载一个 CSS 文件；<br>一个页面 应该 只加载一个 JS 文件。<br>另外，为了文件要能方便走 CDN，需要文件名 应该 随着修改而变化。</p>
+
 </div>
 
 

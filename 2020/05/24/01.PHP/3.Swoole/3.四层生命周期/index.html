@@ -1842,7 +1842,11 @@
 </div>
 
 <div id="article-content">
-	
+	<h1 id="程序全局期"><a href="#程序全局期" class="headerlink" title="程序全局期"></a>程序全局期</h1><p>Server-&gt;start 之前创建的对象资源，持续驻留内存，worker共享。<br>全局期代码在 Server 结束时才会释放，reload 无效。</p>
+<h1 id="进程全局期"><a href="#进程全局期" class="headerlink" title="进程全局期"></a>进程全局期</h1><p>Server 启动后创建多个进程，它们内存空间独立，非共享内存。<br>worker 进程启动后（onWorkerStart）引入的代码在进程存活期有效，reload 会重新加载。</p>
+<h1 id="会话期"><a href="#会话期" class="headerlink" title="会话期"></a>会话期</h1><p>在 onConnect 或 第一次onReceive 时创建，onClose 时销毁。<br>客户端连接后创建的对象会常驻内存，直到此客户端离开才销毁。</p>
+<h1 id="请求期"><a href="#请求期" class="headerlink" title="请求期"></a>请求期</h1><p>在 onReceive/onRequest 收到请求开始，直到发送 Response 返回。<br>请求期创建的对象会在请求完成后销毁，和 fpm 程序中的对象一样。</p>
+
 </div>
 
 

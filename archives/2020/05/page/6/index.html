@@ -1981,7 +1981,8 @@ P管理着一组goroutine队列，P里面会存储当前goroutin
 					3.四层生命周期
 				</h2>
 				<div class="index-brief">
-					
+					程序全局期Server-&gt;start 之前创建的对象资源，持续驻留内存，worker共享。全局期代码在 Server 结束时才会释放，reload 无效。
+进程全局期Server 启动后创建多个进程，它们内存空间独立，非共享内存。worker 进程启动后（onWorkerStart）引入的代码
 					...
 				</div>
 			</a>
@@ -2000,6 +2001,8 @@ P管理着一组goroutine队列，P里面会存储当前goroutin
 				</h2>
 				<div class="index-brief">
 					
+Master进程处理核心事件驱动(主进程)
+Reactor线程处理TCP连接，收发数据的线程。Swoole的主线程在Accept新的连接后，会将这个连接分配给一个固定的Reactor线程，并由这个线程负责监听此socket。在socket可读时读取数据，并进行协议解析，将请求投递到Worker进程
 					...
 				</div>
 			</a>
@@ -2017,7 +2020,10 @@ P管理着一组goroutine队列，P里面会存储当前goroutin
 					1.进程模型
 				</h2>
 				<div class="index-brief">
-					
+					Swoole是一个多进程模式的框架（可以类比Nginx的进程模型），当启动一个Swoole应用时，一共会创建2 + n + m个进程，其中n为Worker进程数，m为TaskWorker进程数，2为一个Master进程和一个Manager进程，它们之间的关系如下图所示。
+ 
+
+其中，Master进程
 					...
 				</div>
 			</a>

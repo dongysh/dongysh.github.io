@@ -8,8 +8,6 @@
 	<!-- title -->
 	
 	<title>
-	
-		post | 
 	 
 	小P笔记本
 	</title>
@@ -308,7 +306,7 @@
 							</ul>
 			
 							<ul>
-								<li class="file active">
+								<li class="file">
 									<a href="/2020/05/24/01.PHP/3.Swoole/2.%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5/">
 										2.核心概念
 									</a>
@@ -1826,98 +1824,161 @@
 
 	<!-- 引入正文 -->
 	<div id="content">
-		<h1 id="article-title">
-
-	2.核心概念
-</h1>
-<div class="article-meta">
+		<div id="index">
 	
-	<span>dongysh</span>
-	<span>2020-05-24 15:02:19</span>
-    
-		<div id="article-categories">
-            
-		</div>
-    
+		<div class="index-li">
+			<a href="/2020/05/24/01.PHP/3.Swoole/3.%E5%9B%9B%E5%B1%82%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/">
+				<h2 class="index-title">
+					3.四层生命周期
+				</h2>
+				<div class="index-brief">
+					程序全局期Server-&gt;start 之前创建的对象资源，持续驻留内存，worker共享。全局期代码在 Server 结束时才会释放，reload 无效。
+进程全局期Server 启动后创建多个进程，它们内存空间独立，非共享内存。worker 进程启动后（onWorkerStart）引入的代码
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2020-05-24</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2020/05/24/01.PHP/2.Laravel/6.%E4%BC%98%E5%8C%96%E6%8A%80%E5%B7%A7/">
+				<h2 class="index-title">
+					6.优化技巧
+				</h2>
+				<div class="index-brief">
+					配置信息缓存生产环境中的 应该 使用『配置信息缓存』来加速 Laravel 配置信息的读取。
+使用以下 Artisan 自带命令，把 config 文件夹里所有配置信息合并到一个文件里，减少运行时文件的载入数量：
+1php artisan config:cache
+
+路由缓存生产环境中的 应该 使用
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2020-05-24</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2020/05/24/01.PHP/2.Laravel/5.%E4%BF%AE%E6%94%B9%E7%94%A8%E6%88%B7%E8%AE%A4%E8%AF%81/">
+				<h2 class="index-title">
+					5.修改用户认证
+				</h2>
+				<div class="index-brief">
+					
+修改 App\Models\User.php 添加如下代码
+
+1234public function getAuthPassword()        &#123;            return ['password' =&gt; $this-&gt;attributes['password
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2020-05-24</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2020/05/24/01.PHP/2.Laravel/4.%E4%B8%AD%E9%97%B4%E4%BB%B6/">
+				<h2 class="index-title">
+					4.中间件
+				</h2>
+				<div class="index-brief">
+					全局中间件如果你希望中间件在应用处理每个 HTTP 请求期间运行。只需要在 app/Http/Kernel.php 中的 $middleware 属性中列出这个中间件。
+为路由分配中间件假设你想为指定的路由分配中间件 ，首先应该在 app/Http/Kernel.php 文件内为该中间件分配一个键。
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2020-05-24</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2020/05/24/01.PHP/2.Laravel/3.%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5/">
+				<h2 class="index-title">
+					3.依赖注入
+				</h2>
+				<div class="index-brief">
+					组件之间依赖关系由容器在运行期决定，形象的说，即由容器动态的将某个依赖关系注入到组件之中。依赖注入的目的并非为软件系统带来更多功能，而是为了提升组件重用的频率，并为系统搭建一个灵活、可扩展的平台。
+
+谁依赖于谁：当然是应用程序依赖于IoC容器；
+为什么需要依赖：应用程序需要IoC容器来提供对象需要的
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2020-05-24</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2020/05/24/01.PHP/2.Laravel/2.%E6%9C%8D%E5%8A%A1%E5%AE%B9%E5%99%A8/">
+				<h2 class="index-title">
+					2.服务容器
+				</h2>
+				<div class="index-brief">
+					
+Ioc—Inversion of Control，即“控制反转”，不是什么技术，而是一种设计思想。
+
+Ioc意味着将你设计好的对象交给容器控制，而不是传统的在你的对象内部直接控制。
+
+谁控制谁？当然是IoC容器控制了对象；
+控制什么？那就是主要控制了外部资源获取（不只是对象包括比如文件等）。
+
+因
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2020-05-24</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2020/05/24/01.PHP/2.Laravel/1.%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/">
+				<h2 class="index-title">
+					1.生命周期
+				</h2>
+				<div class="index-brief">
+					
+
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2020-05-24</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+	
+	<div id="index-paginator">
+		
+	</div>
 </div>
 
-<div id="article-content">
-	<p><img src="/2020/05/24/01.PHP/3.Swoole/2.%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5/1.png" alt></p>
-<h1 id="Master进程"><a href="#Master进程" class="headerlink" title="Master进程"></a>Master进程</h1><p>处理核心事件驱动(主进程)</p>
-<h1 id="Reactor线程"><a href="#Reactor线程" class="headerlink" title="Reactor线程"></a>Reactor线程</h1><p>处理TCP连接，收发数据的线程。Swoole的主线程在Accept新的连接后，会将这个连接分配给一个固定的Reactor线程，并由这个线程负责监听此socket。在socket可读时读取数据，并进行协议解析，将请求投递到Worker进程。在socket可写时将数据发送给TCP客户端。</p>
-<ol>
-<li>负责维护客户端TCP连接、处理网络IO、处理协议、收发数据</li>
-<li>完全是异步非阻塞的模式</li>
-<li>全部为C代码，除Start/Shudown事件回调外，不执行任何PHP代码</li>
-<li>将TCP客户端发来的数据缓冲、拼接、拆分成完整的一个请求数据包</li>
-<li>Reactor以多线程的方式运行</li>
-</ol>
-<h1 id="Manager进程"><a href="#Manager进程" class="headerlink" title="Manager进程"></a>Manager进程</h1><ol>
-<li>swoole中worker/task进程都是由manager进程fork并管理的。</li>
-<li>子进程结束运行时，manager进程负责回收此子进程，避免成为僵尸进程。并创建新的子进程</li>
-<li>服务器关闭时，manager进程将发送信号给所有子进程，通知子进程关闭服务</li>
-<li>服务器reload时，manager进程会逐个关闭/重启子进程</li>
-</ol>
-<h1 id="Worker进程"><a href="#Worker进程" class="headerlink" title="Worker进程"></a>Worker进程</h1><p>处理客户端请求</p>
-<ol>
-<li>接受由Reactor线程投递的请求数据包，并执行PHP回调函数处理数据</li>
-<li>生成响应数据并发给Reactor线程，由Reactor线程发送给TCP客户端</li>
-<li>可以是异步非阻塞模式，也可以是同步阻塞模式</li>
-<li>Worker以多进程的方式运行</li>
-</ol>
-<h1 id="Task进程"><a href="#Task进程" class="headerlink" title="Task进程"></a>Task进程</h1><p>异步工作进程</p>
-<ol>
-<li>接受由Worker进程通过swoole_server-&gt;task/taskwait方法投递的任务</li>
-<li>处理任务，并将结果数据返回(swoole_server-&gt;finish)给Worker进程</li>
-<li>完全是同步阻塞模式</li>
-<li>TaskWorker以多进程的方式运行</li>
-</ol>
-
-</div>
-
-
-    <div class="post-guide">
-        <div class="item left">
-            
-              <a href="/2020/05/24/01.PHP/3.Swoole/3.%E5%9B%9B%E5%B1%82%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/">
-                  <i class="fa fa-angle-left" aria-hidden="true"></i>
-                  3.四层生命周期
-              </a>
-            
-        </div>
-        <div class="item right">
-            
-              <a href="/2020/05/24/01.PHP/3.Swoole/1.%E8%BF%9B%E7%A8%8B%E6%A8%A1%E5%9E%8B/">
-                1.进程模型
-                <i class="fa fa-angle-right" aria-hidden="true"></i>
-              </a>
-            
-        </div>
-    </div>
-
-
-
-	<div id="vcomments"></div>
-
-
-<script>
-	
-		// 评论
-		new Valine({
-			av: AV,
-			el: '#vcomments',
-			notify: false,
-			verify: false,
-			path: window.location.pathname,
-			appId: '',
-			appKey: '',
-			placeholder: '请输入评论',
-			avatar: 'retro',
-			recordIP: false
-		})
-	
-	
-</script>
 	</div>
 	<div id="footer">
   <p>
